@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<HTML lang="EN">
+  <head>
+    <meta charset="UTF-8">
+    <title>GrabPanda</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="intro">
+        <h1>Welcome to GrabPanda</h1>
+        <p>Order your favorite food here, anytime, any place, right here at GrabPanda.</p>
+        <a href="#McDoners" class="button">Order Here</a>
+      </div>
+      <section class="featured">
+        <h2>Featured Restaurants</h2>
+        <div class="restaurants">
+          <div class="restaurant">
+            <h3>McDoner's</h3>
+            <p>A fast-food chain that offers affordable and convenient meals in a fun and welcoming atmosphere.</p>
+            <a href="#McDoners" class="button">Order Now</a>
+          </div>
+          <div class="restaurant">
+            <h3>Burger Queen</h3>
+            <p>N/A</p>
+            <button>Coming Soon...</button>
+          </div>
+          <div class="restaurant">
+            <h3>Starbucksbucks</h3>
+            <p>N/A</p>
+            <button>Coming soon...</button>
+          </div>
+        </div>
+      </section>
+      <div class="menu">
+        <h2>Our Bestsellers!</h2>
+        <p>Come and try our bestselling food/drinks!</p>
+        <div class="categories">
+          <button class="category active" onclick="filterMenu('all')">All</button>
+        </div>
+        <div class="items">
+          <div class="item food">
+            <h3>N/A</h3>
+            <p>Coming soon...</p>
+          </div>
+          <div class="item drink">
+            <h3>N/A</h3>
+            <p>Coming soon...</p>
+          </div>
+          <div class="item food">
+            <h3>N/A</h3>
+            <p>Coming soon...</p>
+          </div>
+          <div class="item drink">
+            <h3>N/A</h3>
+            <p>Coming soon...</p>
+          </div>
+          <div class="item food">
+            <h3>N/A</h3>
+            <p>Coming soon...</p>
+          </div>
+          <div class="item drink">
+            <h3>N/A</h3>
+            <p>Coming soon...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h1 class="text-center mb-3" id="McDoners" >McDoner's Menu</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <h2>Meals</h2>
+              <div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Doners Mcburger w/ Fries", "foodprice": 70}' id="McBurger">
+                  <label class="form-check-label">
+                Doner's Mcburger w/ Fries - ₱70
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Don Spaghetti", "foodprice": 50}' id="Spaghetti">
+                  <label class="form-check-label">
+                    Don Spaghetti - ₱50
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Don Beefy Steak", "foodprice": 60}' id="BeefySteak">
+                  <label class="form-check-label" for="BeefySteak">
+                    Don Beefy Steak - ₱60
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <h2>Drinks</h2>
+              <div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Don Float Coke", "foodprice": 35}' id="Coke">
+                  <label class="form-check-label" for="Coke">  
+                    Don Float Coke - ₱35
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Sprite", "foodprice": 20}' id="Sprite">
+                  <label class="form-check-label" for="Sprite">
+                  Sprite - ₱20
+                  </label>
+                  </div>
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Royal", "foodprice": 20}' id="Royal">
+                  <label class="form-check-label" for="Royal">
+                  Royal - ₱20
+                  </label>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  <hr>
+                  <form action="http://sirjm.infinityfreeapp.com/aa2receiver.php" method="get">
+                  <div class="mb-3">
+                  <label for="custname" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="custname" name="custname" required>
+                  </div>
+                  <div class="mb-3">
+                  <label for="deliveryaddr" class="form-label">Delivery Address</label>
+                  <textarea class="form-control" id="deliveryaddr" name="deliveryaddr" rows="3" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                  <label class="form-check-label">Address Type</label>
+                  <div>
+                  <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="addrtype" id="home" value="home" checked>
+                  <label class="form-check-label" for="home">
+                  Home
+                  </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="addrtype" id="business" value="business">
+                  <label class="form-check-label" for="business">
+                  Business
+                  </label>
+                  </div>
+                  </div>
+                  </div>
+                  <input type="hidden" name="foodcart" value=''>
+                  <input type="hidden" name="restoname" value="McDoner's">
+                  <button type="submit" class="btn btn-primary">Place Order</button>
+                  </form>
+                  
+                    </div>
+                      
+    
+                    <script>
+                        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+                        const foodcart = document.querySelector('input[name=foodcart]');
+                        checkboxes.forEach((checkbox) => {
+                        checkbox.addEventListener('change', () => {
+                            const checkedItems = Array.from(checkboxes)
+                            .filter((checkbox) => checkbox.checked)
+                            .map((checkbox) => JSON.parse(checkbox.value));
+                            foodcart.value = JSON.stringify(checkedItems);
+                        });
+                        });
+                    </script>
+
+    </main>
+    <footer>
+      <p>&copy; 2023 GrabPanda. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
