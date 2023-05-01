@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <title>GrabPanda</title>
+  <style>
+    
+    body {
+      background-color: pink;
+    }
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .form-check-label {
+      font-weight: bold;
+    }
+    .btn-primary {
+      background-color: green;
+      border-color: green;
+    }
+    .btn-primary:hover {
+      background-color: darkgreen;
+      border-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-3">GrabPanda Menu</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <h2>Appetizers</h2>
+          <div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Crispy Spring Rolls", "foodprice": 6}' id="springrolls">
+              <label class="form-check-label" for="springrolls">
+                Crispy Spring Rolls - $6
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Cheesy Jalapeño Poppers", "foodprice": 8}' id="poppers">
+              <label class="form-check-label" for="poppers">
+                Cheesy Jalapeño Poppers - $8
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Garlic Bread", "foodprice": 5}' id="garlicbread">
+              <label class="form-check-label" for="garlicbread">
+                Garlic Bread - $5
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <h2>Main Courses</h2>
+          <div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Grilled Chicken with Rice", "foodprice": 12}' id="chickenrice">
+              <label class="form-check-label" for="chickenrice">
+                Grilled Chicken with Rice - $12
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Beef Burger with Fries", "foodprice": 10}' id="beefburger">
+              <label class="form-check-label" for="beefburger">
+              Beef Burger with Fries - $10
+              </label>
+              </div>
+              <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="menuitem[]" value='{"foodname": "Pesto Pasta with Shrimp", "foodprice": 14}' id="pestopasta">
+              <label class="form-check-label" for="pestopasta">
+              Pesto Pasta with Shrimp - $14
+              </label>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              <hr>
+              <form action="http://sirjm.infinityfreeapp.com/aa2receiver.php" method="get">
+              <div class="mb-3">
+              <label for="custname" class="form-label">Name</label>
+              <input type="text" class="form-control" id="custname" name="custname" required>
+              </div>
+              <div class="mb-3">
+              <label for="deliveryaddr" class="form-label">Delivery Address</label>
+              <textarea class="form-control" id="deliveryaddr" name="deliveryaddr" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+              <label class="form-check-label">Address Type</label>
+              <div>
+              <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="addrtype" id="home" value="home" checked>
+              <label class="form-check-label" for="home">
+              Home
+              </label>
+              </div>
+              <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="addrtype" id="business" value="business">
+              <label class="form-check-label" for="business">
+              Business
+              </label>
+              </div>
+              </div>
+              </div>
+              <input type="hidden" name="foodcart" value=''>
+              <input type="hidden" name="restoname" value="GrabPanda">
+              <button type="submit" class="btn btn-primary">Place Order</button>
+              </form>
+              
+                </div>
+                  
+
+                <script>
+                    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+                    const foodcart = document.querySelector('input[name=foodcart]');
+                    checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener('change', () => {
+                        const checkedItems = Array.from(checkboxes)
+                        .filter((checkbox) => checkbox.checked)
+                        .map((checkbox) => JSON.parse(checkbox.value));
+                        foodcart.value = JSON.stringify(checkedItems);
+                    });
+                    });
+                </script>
+                </body>
+                </html>
